@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import Retool from "react-retool";
 
 const Login = () => {
   const [email, setEmail] = useState("globall@platformvisions.com");
@@ -33,14 +34,12 @@ const Login = () => {
     console.info("retoolEmbedUrl", retoolEmbedUrl);
   }
   return (
-    <div className="App p-5">
-      <div className="container">
+    <div style={{ height: "100vh", overflow: "hidden" }}>
         
-      </div>
       {retoolEmbedUrl != null && (
-        <Navigate to="/retool" state={{ retoolEmbedUrl }} />
+        // <Navigate to="/retool" state={{ retoolEmbedUrl }} />
+        <Retool url={retoolEmbedUrl} />
       )}
-
       {showLoader && (
         <div className="loader-overlay">
           <div class="spinner-border" role="status">
