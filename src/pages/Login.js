@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Retool from "react-retool";
+import logo from "../assets/images/gcrm-icon.png";
 
 const Login = () => {
   const [email, setEmail] = useState("globall@platformvisions.com");
@@ -43,7 +44,7 @@ const Login = () => {
       {showLoader && (
         <div className="loader-overlay">
           <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
+            <img src={logo} alt="Loading" />
           </div>
         </div>
       )}
