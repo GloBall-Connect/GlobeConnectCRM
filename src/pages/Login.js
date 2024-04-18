@@ -8,14 +8,18 @@ const Login = () => {
   const [email, setEmail] = useState("globall@platformvisions.com");
   const [password, setPassword] = useState("7h71Sd7&z");
   const [retoolEmbedUrl, setRetoolEmbedUrl] = useState(null);
-  const [showLoader, setShowLoader] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
+  const [text, setText] = useState('default');
 
   useEffect(() => {
-    getWorkflow()
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 4000);
+    getWorkflow();
   }, [])
 
   async function getWorkflow() {
-    setShowLoader(true);
+    console.info('workflow started')
     const callOptions = {
       method: "POST",
       body: JSON.stringify({
@@ -30,23 +34,21 @@ const Login = () => {
     );
     const res = await data2.json();
     setRetoolEmbedUrl(res.embedUrl);
-    setShowLoader(false);
-    // navigate('/retool', {loadingUrl: retoolEmbedUrl});
     console.info("retoolEmbedUrl", retoolEmbedUrl);
   }
   return (
     <div style={{ height: "100vh", overflow: "hidden" }}>
+      {showLoader && (
+        <div className="fullPage">
+          <div className="image-container">
+            <img className="logo" src={logo} />
+          </div>
+        </div>
+      )}
         
       {retoolEmbedUrl != null && (
         // <Navigate to="/retool" state={{ retoolEmbedUrl }} />
         <Retool url={retoolEmbedUrl} />
-      )}
-      {showLoader && (
-        <div className="loader-overlay">
-          <div class="spinner-border" role="status">
-            <img src={logo} alt="Loading" />
-          </div>
-        </div>
       )}
     </div>
   );
