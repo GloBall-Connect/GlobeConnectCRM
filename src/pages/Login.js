@@ -25,7 +25,7 @@ const Login = () => {
       body: JSON.stringify({
         email: email,
         password: password,
-        pageUuid: "64e548e0-f722-11ee-86d5-1f8db77d3c12",
+        pageUuid: "40e10d5a-911c-11ef-8c09-6f609c3c0072",
       }),
     };
     const data2 = await fetch(
