@@ -5,8 +5,8 @@ import Retool from "react-retool";
 import logo from "../assets/images/gcrm-icon.png";
 
 const Login = () => {
-  const [email, setEmail] = useState("globall@platformvisions.com");
-  const [password, setPassword] = useState("7h71Sd7&z");
+  // const [email, setEmail] = useState("globall@platformvisions.com");
+  // const [password, setPassword] = useState("7h71Sd7&z");
   const [retoolEmbedUrl, setRetoolEmbedUrl] = useState(null);
   const [showLoader, setShowLoader] = useState(true);
   const [text, setText] = useState('default');
@@ -23,8 +23,6 @@ const Login = () => {
     const callOptions = {
       method: "POST",
       body: JSON.stringify({
-        email: email,
-        password: password,
         pageUuid: "40e10d5a-911c-11ef-8c09-6f609c3c0072",
       }),
     };
