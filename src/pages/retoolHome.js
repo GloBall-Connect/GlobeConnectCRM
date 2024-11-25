@@ -35,7 +35,7 @@ const RetoolHome = ({ loadingUrl }) => {
     console.info("retoolEmbedUrl", retoolEmbedUrl);
   }
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "100dvh" }}>
         {state.retoolEmbedUrl && (
             <Retool url={state.retoolEmbedUrl} />
         )}
