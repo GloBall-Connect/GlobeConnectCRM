@@ -36,7 +36,7 @@ const Login = () => {
     console.info("retoolEmbedUrl", retoolEmbedUrl);
   }
   return (
-    <div style={{ height: "100vh", overflow: "hidden" }}>
+    <div style={{ height: "100dvh", overflow: "hidden" }}>
       {showLoader && (
         <div className="fullPage">
           <div className="image-container">
